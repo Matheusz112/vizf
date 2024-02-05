@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        window.onload = function() {
+            const videoIds = shuffleArray([
+                'kukM7N_pV1U',
+                'pp29W7H7wmM',
+                '481PuFmA4Lg',
+                'WlSslFEs9Zk',
+                'vtIrC1Ks1Sk',
+                'PkUelPc8Ffo',
+                'GeJrshQgOWU',
+                'AOTm-76iInc',
+                'hqmQN1rUOAc',
+                'EVLYPV4Hvzc',
+                'zHEO3_qCglA',
+                'Jt9EzValpHs',
+                'XvfU1OxsxTQ',
+                'cmHoauilYzk',
+                'PDu_ZUAbHKU',
+                '7gMcf-xfqw8',
+                'Zfa6TZfoRmg',
+                'l_Y5x_Ff85c',
+                'SZRrZV_3_i0',
+                'f51gHkmVwfo',
+                'f4dZvlEF5XQ',
+                'ZLL2g_oDEWc',
+                'EDbKmCAKJjw',
+                'sQJUTpZPr6s',
+                'eqp86Bx82Dk',
+                'C21loNWG73A',
+                'W2UOIwz68jQ',
+                'VGHA8Zx97lw',
+                'RhTXDOJBA6U',
+                'iVNdzf6rqyM',
+                'LcGbVEdXs9U',
+                '2Es10oN6QO8',
+                'PYxX5Tjv_NQ',
+                'I3_1iXYr6OE',
+                '6DQwMlxaeyY',
+                'taTbpKULBtM',
+                '8jRj9Dpb2uk',
+                'VSonaeJSS6s',
+                'Hm_AUk4O-HU',
+                'y_8gaznhsc0',
+                'tt5bKiUlbR8',
+                '3JxgxBYis6Q',
+                'vJFC2MkaDKc',
+                '-bfzAbIi3Sw',
+                'l-SibKgyee0',
+                '2qz0s2hEcPk',
+                '6ulQNqSqCjs',
+            ]); 
+
+
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoIds[0]}?autoplay=1&fs=1`;
+            document.body.appendChild(iframe);
+
+            let currentIndex = 0;
+
+            iframe.addEventListener('ended', function() {
+                currentIndex = (currentIndex + 1) % videoIds.length;
+                iframe.src = `https://www.youtube.com/embed/${videoIds[currentIndex]}?autoplay=1&fs=1`;
+            });
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
